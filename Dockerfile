@@ -24,7 +24,7 @@ RUN apt-get update && apt-get install -y \
     && curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 
 # Must be set to 1 for HHVM in docker (https://github.com/hhvm/hhvm-docker/issues/11)
-RUN export HHVM_DISABLE_NUMA=1
+ENV HHVM_DISABLE_NUMA true
 
 RUN chown hack:hack /app
 
